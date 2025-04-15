@@ -106,4 +106,5 @@ jobs:
 
       - name: run kubectl
         run: kubectl version -o yaml
+        continue-on-error: true
 
