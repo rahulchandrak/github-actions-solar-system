@@ -37,7 +37,6 @@ jobs:
             path: test-results.xml
     code-coverage:
       name: code coverage
-      continue-on-error: true
       runs-on: ubuntu-latest
       steps:
       - name: Checkout Repository
@@ -55,6 +54,7 @@ jobs:
         run: npm install
       - name: Run Code Coverage
         run: npm run coverage
+        continue-on-error: true
       - name: Upload code coverage Result
         if: always()
         uses: actions/upload-artifact@v4
